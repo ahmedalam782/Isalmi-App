@@ -9,7 +9,10 @@ class QuranScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/images/qur2an_screen_logo.png'),
+        Expanded(
+          flex: 1,
+          child: Image.asset('assets/images/qur2an_screen_logo.png'),
+        ),
         Divider(
           color: Theme.of(context).primaryColor,
           thickness: 2,
@@ -38,6 +41,7 @@ class QuranScreen extends StatelessWidget {
           thickness: 2,
         ),
         Expanded(
+          flex: 3,
           child: ListView.separated(
               itemBuilder: (_, index) => VersesWidget(
                     names: numbersAndNamesOfVerses[index],

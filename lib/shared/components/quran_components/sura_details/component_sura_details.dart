@@ -1,9 +1,8 @@
-import 'package:audioplayers/audioplayers.dart';
+import 'package:conditional_builder_null_safety/conditional_builder_null_safety.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../../../models/sura_details_args.dart';
-import '../../constant.dart';
 
 class SuraDetailsComponent extends StatefulWidget {
   @override
@@ -76,25 +75,27 @@ class _SuraDetailsComponentState extends State<SuraDetailsComponent> {
             thickness: 2,
           ),
           Expanded(
-            child: chapterContent.isEmpty
-                ? Center(
-                    child: CircularProgressIndicator(),
-                  )
-                : ListView.separated(
-                    itemBuilder: (_, index) => Text(
-                      chapterContent[index],
-                      textAlign: TextAlign.center,
-                      style: TextStyle(
-                        fontSize: 20,
-                        fontFamily: 'DecoType Thuluth',
-                      ),
-                    ),
-                    separatorBuilder: (_, index) => Divider(
-                      color: Theme.of(context).primaryColor,
-                      thickness: 0,
-                    ),
-                    itemCount: chapterContent.length,
+            child: ConditionalBuilder(
+              condition: chapterContent.isNotEmpty,
+              builder: (context) => ListView.separated(
+                itemBuilder: (_, index) => Text(
+                  chapterContent[index],
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontFamily: 'DecoType Thuluth',
                   ),
+                ),
+                separatorBuilder: (_, index) => Divider(
+                  color: Theme.of(context).primaryColor,
+                  thickness: 0,
+                ),
+                itemCount: chapterContent.length,
+              ),
+              fallback: (context) => Center(
+                child: CircularProgressIndicator(),
+              ),
+            ),
           ),
         ],
       ),

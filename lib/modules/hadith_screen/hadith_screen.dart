@@ -10,7 +10,10 @@ class HadithScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Image.asset('assets/images/hadeth_logo.png'),
+        Expanded(
+          flex: 1,
+          child: Image.asset('assets/images/hadeth_logo.png'),
+        ),
         Divider(
           color: Theme.of(context).primaryColor,
           thickness: 2,
@@ -29,6 +32,7 @@ class HadithScreen extends StatelessWidget {
           thickness: 2,
         ),
         Expanded(
+          flex: 3,
           child: ListView.separated(
               itemBuilder: (_, index) => HadithWidget(
                     names: namesOfHadith,
