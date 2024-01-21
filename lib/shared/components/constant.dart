@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:islami_app/modules/hadith_screen/hadith_screen.dart';
 import 'package:islami_app/modules/quran_screen/quran_screen.dart';
 import 'package:islami_app/modules/radio_screen.dart';
-import 'package:islami_app/modules/sebiha_screen.dart';
+import 'package:islami_app/modules/sebiha_screen/sebiha_screen.dart';
 
 int selectedTabIndex = 3;
 List<Widget> tabsScreen = [
@@ -525,4 +525,12 @@ List<String> namesOfHadith = [
   'الـحديث الثامن والأربعون',
   'الحديث التاسع والأربعون',
   'الحديث الخمسون',
+];
+
+List<String> namesOfSebiha = [
+  'سبحان الله',
+  'الحمد لله',
+  'الله أكبر',
+  'لا إله إلا الله',
+  'ولا حول ولا قوة إلا بالله',
 ];
