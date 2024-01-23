@@ -15,20 +15,17 @@ class HadithScreen extends StatelessWidget {
           child: Image.asset('assets/images/hadeth_logo.png'),
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).dividerTheme.color,
           thickness: 2,
         ),
         Center(
           child: Text(
             'الأحاديث',
-            style: TextStyle(
-                fontFamily: 'El Messiri',
-                fontSize: 25,
-                color: Color(0xff242424)),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).dividerTheme.color,
           thickness: 2,
         ),
         Expanded(
@@ -39,7 +36,7 @@ class HadithScreen extends StatelessWidget {
                     index: index,
                   ),
               separatorBuilder: (_, index) => Divider(
-                    color: Theme.of(context).primaryColor,
+                color: Theme.of(context).dividerTheme.color,
                     thickness: 2,
                   ),
               itemCount: namesOfHadith.length),

@@ -22,11 +22,7 @@ class HadithWidget extends StatelessWidget {
         child: Center(
           child: Text(
             '${names[index]}',
-            style: TextStyle(
-              fontFamily: 'El Messiri',
-              fontSize: 25,
-              color: Color(0xff242424),
-            ),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
       ),

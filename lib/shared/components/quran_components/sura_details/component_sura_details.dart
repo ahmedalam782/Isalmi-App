@@ -18,36 +18,33 @@ class _SuraDetailsComponentState extends State<SuraDetailsComponent> {
     if (chapterContent.isEmpty) {
       readFiles(args.index);
     }
-    return Container(
+    return Card(
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Row(
+            mainAxisSize: MainAxisSize.min,
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                'سورة ${args.title}',
-                style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.bold,
-                    fontFamily: 'Monotype Koufi'),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  'سورة ${args.title}',
+                  style: Theme.of(context).textTheme.bodyLarge,
+                ),
               ),
               SizedBox(
                 width: 20,
               ),
               IconButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black),
+                  backgroundColor: MaterialStateProperty.all(
+                      Theme.of(context).dividerTheme.color),
                 ),
                 icon: Icon(
                   Icons.play_arrow,
-                  color: Colors.white,
+                  color: Theme.of(context).appBarTheme.titleTextStyle?.color,
                 ),
                 onPressed: () {
                   // player.play(AssetSource('sounds/${(args.index+1)}.mp3'));
@@ -58,11 +55,12 @@ class _SuraDetailsComponentState extends State<SuraDetailsComponent> {
               ),
               IconButton(
                 style: ButtonStyle(
-                  backgroundColor: MaterialStateProperty.all(Colors.black),
+                  backgroundColor: MaterialStateProperty.all(
+                      Theme.of(context).dividerTheme.color),
                 ),
                 icon: Icon(
                   Icons.pause,
-                  color: Colors.white,
+                  color: Theme.of(context).appBarTheme.titleTextStyle?.color,
                 ),
                 onPressed: () {
                   // player.stop();
@@ -71,7 +69,7 @@ class _SuraDetailsComponentState extends State<SuraDetailsComponent> {
             ],
           ),
           Divider(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).dividerTheme.color,
             thickness: 2,
           ),
           Expanded(
@@ -81,13 +79,10 @@ class _SuraDetailsComponentState extends State<SuraDetailsComponent> {
                 itemBuilder: (_, index) => Text(
                   chapterContent[index],
                   textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 20,
-                    fontFamily: 'DecoType Thuluth',
-                  ),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 separatorBuilder: (_, index) => Divider(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).dividerTheme.color,
                   thickness: 0,
                 ),
                 itemCount: chapterContent.length,

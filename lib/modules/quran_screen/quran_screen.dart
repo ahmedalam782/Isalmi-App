@@ -14,7 +14,7 @@ class QuranScreen extends StatelessWidget {
           child: Image.asset('assets/images/qur2an_screen_logo.png'),
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).dividerTheme.color,
           thickness: 2,
         ),
         Row(
@@ -22,36 +22,31 @@ class QuranScreen extends StatelessWidget {
           children: [
             Text(
               'عدد الآيات',
-              style: TextStyle(
-                  fontFamily: 'El Messiri',
-                  fontSize: 25,
-                  color: Color(0xff242424)),
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
             Text(
               'اسم السورة',
-              style: TextStyle(
-                  fontFamily: 'El Messiri',
-                  fontSize: 25,
-                  color: Color(0xff242424)),
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],
         ),
         Divider(
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).dividerTheme.color,
           thickness: 2,
         ),
         Expanded(
           flex: 3,
           child: ListView.separated(
-              itemBuilder: (_, index) => VersesWidget(
-                    names: numbersAndNamesOfVerses[index],
-                    index: index,
-                  ),
-              separatorBuilder: (_, index) => Divider(
-                    color: Theme.of(context).primaryColor,
-                    thickness: 2,
-                  ),
-              itemCount: numbersAndNamesOfVerses.length),
+            itemBuilder: (_, index) => VersesWidget(
+              names: numbersAndNamesOfVerses[index],
+              index: index,
+            ),
+            separatorBuilder: (_, index) => Divider(
+              color: Theme.of(context).dividerTheme.color,
+              thickness: 2,
+            ),
+            itemCount: numbersAndNamesOfVerses.length,
+          ),
         ),
       ],
     );

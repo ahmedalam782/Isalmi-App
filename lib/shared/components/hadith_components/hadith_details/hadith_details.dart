@@ -17,27 +17,22 @@ class _HadithDetailsComponentState extends State<HadithDetailsComponent> {
     if (chapterContent.isEmpty) {
       readFiles(args.index);
     }
-    return Container(
+    return Card(
       margin: EdgeInsets.symmetric(horizontal: 20, vertical: 30),
-      padding: EdgeInsets.all(8),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-      ),
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
           Center(
-            child: Text(
-              args.title,
-              style: TextStyle(
-                  fontSize: 25,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Monotype Koufi'),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                args.title,
+                style: Theme.of(context).textTheme.bodyLarge,
+              ),
             ),
           ),
           Divider(
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).dividerTheme.color,
             thickness: 2,
           ),
           Expanded(
@@ -47,11 +42,10 @@ class _HadithDetailsComponentState extends State<HadithDetailsComponent> {
                 itemBuilder: (_, index) => Text(
                   chapterContent[index],
                   textAlign: TextAlign.center,
-                  style:
-                      TextStyle(fontSize: 20, fontFamily: 'DecoType Thuluth'),
+                  style: Theme.of(context).textTheme.bodyMedium,
                 ),
                 separatorBuilder: (_, index) => Divider(
-                  color: Theme.of(context).primaryColor,
+                  color: Theme.of(context).dividerTheme.color,
                   thickness: 0,
                 ),
                 itemCount: chapterContent.length,

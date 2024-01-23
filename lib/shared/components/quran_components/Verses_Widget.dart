@@ -24,17 +24,11 @@ class VersesWidget extends StatelessWidget {
           children: [
             Text(
               '${names['number']}',
-              style: TextStyle(
-                  fontFamily: 'El Messiri',
-                  fontSize: 25,
-                  color: Color(0xff242424)),
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
             Text(
               '${names['name']}',
-              style: TextStyle(
-                  fontFamily: 'El Messiri',
-                  fontSize: 25,
-                  color: Color(0xff242424)),
+              style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],
         ),

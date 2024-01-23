@@ -26,7 +26,7 @@ class _SebihaScreenState extends State<SebihaScreen> {
               onTap: () => onTasbehTab(),
               child: Padding(
                 padding: EdgeInsets.only(
-                  top: MediaQuery.of(context).size.height * .11,
+                  top: MediaQuery.of(context).size.width * .19,
                 ),
                 child: Transform.rotate(
                   angle: angle,
@@ -42,10 +42,7 @@ class _SebihaScreenState extends State<SebihaScreen> {
         Center(
           child: Text(
             'عدد التسبيحات',
-            style: TextStyle(
-                fontFamily: 'El Messiri',
-                fontSize: 25,
-                color: Color(0xff242424)),
+            style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),
         SizedBox(
@@ -59,10 +56,7 @@ class _SebihaScreenState extends State<SebihaScreen> {
           ),
           child: Text(
             '$count',
-            style: TextStyle(
-                fontFamily: 'Monotype Koufi',
-                fontSize: 25,
-                color: Color(0xff242424)),
+            style: Theme.of(context).textTheme.bodyLarge,
           ),
         ),
         SizedBox(
@@ -72,16 +66,11 @@ class _SebihaScreenState extends State<SebihaScreen> {
           padding: EdgeInsets.all(16),
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            color: Theme.of(context).primaryColor,
+            color: Theme.of(context).dividerTheme.color,
           ),
           child: Text(
             '${namesOfSebiha[currentIndex]}',
-            style: TextStyle(
-              fontFamily: 'JF Flat',
-              fontSize: 25,
-              color: Colors.white,
-            ),
-          ),
+              style: Theme.of(context).textTheme.titleMedium),
         ),
       ],
     );
