@@ -1,17 +1,5 @@
 import 'package:audioplayers/audioplayers.dart';
-import 'package:flutter/material.dart';
-import 'package:islami_app/modules/hadith_screen/hadith_screen.dart';
-import 'package:islami_app/modules/quran_screen/quran_screen.dart';
-import 'package:islami_app/modules/radio_screen.dart';
-import 'package:islami_app/modules/sebiha_screen/sebiha_screen.dart';
 
-int selectedTabIndex = 3;
-List<Widget> tabsScreen = [
-  RadioScreen(),
-  SebihaScreen(),
-  HadithScreen(),
-  QuranScreen(),
-];
 List<Map> numbersAndNamesOfVerses = [
   {
     "name": "الفاتحه",
