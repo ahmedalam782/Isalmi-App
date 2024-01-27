@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class RadioScreen extends StatelessWidget {
   static const String routeName = 'RadioScreen';
@@ -14,7 +15,7 @@ class RadioScreen extends StatelessWidget {
         ),
         Center(
           child: Text(
-            'إذاعة القرآن الكريم',
+            AppLocalizations.of(context)!.holyQuranRadio,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),

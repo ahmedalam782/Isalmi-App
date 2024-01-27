@@ -23,11 +23,11 @@ class VersesWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              '${names['number']}',
+              '${names['name']}',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             Text(
-              '${names['name']}',
+              '${names['number']}',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],

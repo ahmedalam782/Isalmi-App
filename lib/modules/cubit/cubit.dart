@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:islami_app/modules/cubit/states.dart';
+import 'package:islami_app/modules/setting_screen/setting_screen.dart';
 
 import '../../shared/components/constant.dart';
 import '../../shared/network/local/cache_helper.dart';
@@ -14,13 +15,14 @@ class IslamiAppCubit extends Cubit<IslamiAppState> {
 
   IslamiAppCubit get(context) => BlocProvider.of(context);
 
-  int selectedTabIndex = 3;
+  int selectedTabIndex = 0;
 
   List<Widget> tabsScreen = [
-    RadioScreen(),
-    SebihaScreen(),
-    HadithScreen(),
     QuranScreen(),
+    HadithScreen(),
+    SebihaScreen(),
+    RadioScreen(),
+    SettingScreen()
   ];
 
   void changeIndexBottomNarBar(int index) {
@@ -36,7 +38,19 @@ class IslamiAppCubit extends Cubit<IslamiAppState> {
     } else {
       isDark = !isDark;
       CashHelper.putData(key: 'isDark', value: isDark)
-          .then((value) => emit(IslamiAppChangeMode()));
+          .then((value) => emit(IslamiAppChangeModeState()));
+    }
+  }
+
+  bool isLanguage = false;
+
+  void changeAppLanguage({bool? forShared}) {
+    if (forShared != null) {
+      isLanguage = forShared;
+    } else {
+      isLanguage = !isLanguage;
+      CashHelper.putData(key: 'isLanguage', value: isLanguage)
+          .then((value) => emit(IslamiAppChangeModeState()));
     }
   }
 
@@ -56,6 +70,6 @@ class IslamiAppCubit extends Cubit<IslamiAppState> {
       count = 0;
       angle = 0;
     }
-    emit(IslamiAppChangeCountSebihaAndRotate());
+    emit(IslamiAppChangeCountSebihaAndRotateState());
   }
 }

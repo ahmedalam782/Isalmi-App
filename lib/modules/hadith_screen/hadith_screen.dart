@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/shared/components/constant.dart';
 
 import '../../shared/components/hadith_components/hadith_widget.dart';
@@ -20,7 +21,7 @@ class HadithScreen extends StatelessWidget {
         ),
         Center(
           child: Text(
-            'الأحاديث',
+            AppLocalizations.of(context)!.hadiths,
             style: Theme.of(context).textTheme.headlineLarge,
           ),
         ),

@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/modules/cubit/cubit.dart';
 import 'package:islami_app/modules/cubit/states.dart';
 import 'package:islami_app/shared/components/background_image_app.dart';
-import 'package:islami_app/shared/components/constant.dart';
 
 class HomeScreen extends StatelessWidget {
   static const String routeName = 'HomeScreen';
@@ -18,17 +18,9 @@ class HomeScreen extends StatelessWidget {
           child: Scaffold(
             backgroundColor: Colors.transparent,
             appBar: AppBar(
-              title: const Text(
-                titleAppBar,
+              title: Text(
+                AppLocalizations.of(context)!.titleAppBar,
               ),
-              actions: [
-                IconButton(
-                  onPressed: () => cubit.changeAppMode(),
-                  icon: Icon(
-                    cubit.isDark ? Icons.dark_mode : Icons.light_mode,
-                  ),
-                )
-              ],
             ),
             bottomNavigationBar: BottomNavigationBar(
               currentIndex: cubit.selectedTabIndex,
@@ -37,32 +29,39 @@ class HomeScreen extends StatelessWidget {
                 BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(
-                    AssetImage(
-                      'assets/images/icon_radio.png',
-                    ),
+                    AssetImage('assets/images/icon_quran.png'),
                   ),
-                  label: 'الراديو',
-                ),
-                BottomNavigationBarItem(
-                  backgroundColor: Theme.of(context).primaryColor,
-                  icon: ImageIcon(
-                    AssetImage('assets/images/icon_sebha.png'),
-                  ),
-                  label: 'التسبيح',
+                  label: AppLocalizations.of(context)!.quran,
                 ),
                 BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(
                     AssetImage('assets/images/icon_hadeth.png'),
                   ),
-                  label: 'الأحاديث',
+                  label: AppLocalizations.of(context)!.hadiths,
                 ),
                 BottomNavigationBarItem(
                   backgroundColor: Theme.of(context).primaryColor,
                   icon: ImageIcon(
-                    AssetImage('assets/images/icon_quran.png'),
+                    AssetImage('assets/images/icon_sebha.png'),
                   ),
-                  label: 'القرآن',
+                  label: AppLocalizations.of(context)!.altasbih,
+                ),
+                BottomNavigationBarItem(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  icon: ImageIcon(
+                    AssetImage(
+                      'assets/images/icon_radio.png',
+                    ),
+                  ),
+                  label: AppLocalizations.of(context)!.radio,
+                ),
+                BottomNavigationBarItem(
+                  backgroundColor: Theme.of(context).primaryColor,
+                  icon: Icon(
+                    Icons.settings,
+                  ),
+                  label: AppLocalizations.of(context)!.settings,
                 ),
               ],
             ),

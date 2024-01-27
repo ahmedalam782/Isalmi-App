@@ -459,7 +459,6 @@ List<Map> numbersAndNamesOfVerses = [
   },
 ];
 
-const String titleAppBar = 'إسلامي';
 final player = AudioPlayer();
 
 List<String> namesOfHadith = [

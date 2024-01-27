@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/modules/cubit/cubit.dart';
 import 'package:islami_app/modules/cubit/states.dart';
 import 'package:islami_app/shared/components/constant.dart';
@@ -46,7 +47,7 @@ class SebihaScreen extends StatelessWidget {
             ),
             Center(
               child: Text(
-                'عدد التسبيحات',
+                AppLocalizations.of(context)!.numberOfPraises,
                 style: Theme.of(context).textTheme.headlineLarge,
               ),
             ),

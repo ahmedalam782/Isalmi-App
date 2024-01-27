@@ -4,6 +4,8 @@ class IslamiAppInitialState extends IslamiAppState {}
 
 class IslamiAppChangeBottomNavState extends IslamiAppState {}
 
-class IslamiAppChangeMode extends IslamiAppState {}
+class IslamiAppChangeModeState extends IslamiAppState {}
 
-class IslamiAppChangeCountSebihaAndRotate extends IslamiAppState {}
+class IslamiAppChangeCountSebihaAndRotateState extends IslamiAppState {}
+
+class IslamiAppChangeAppLanguageState extends IslamiAppState {}
