@@ -4,10 +4,10 @@ import 'package:islami_app/models/hadith_details_args.dart';
 import '../../../modules/hadith_details_screen/hadith_datails_screen.dart';
 
 class HadithWidget extends StatelessWidget {
-  List<String> names;
-  int index;
+  final List<String> names;
+  final int index;
 
-  HadithWidget({required this.names, required this.index});
+  const HadithWidget({super.key, required this.names, required this.index});
 
   @override
   Widget build(BuildContext context) {

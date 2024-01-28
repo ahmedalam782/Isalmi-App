@@ -73,7 +73,7 @@ class ThemeDataApp {
   );
   static ThemeData darkTheme = ThemeData(
     progressIndicatorTheme: ProgressIndicatorThemeData(
-      color: lightPrimaryColor,
+      color: darkDivider,
     ),
     primaryColor: darkPrimaryColor,
     dividerTheme: DividerThemeData(

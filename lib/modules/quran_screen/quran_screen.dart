@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:islami_app/shared/components/constant.dart';
 import 'package:islami_app/shared/components/quran_components/Verses_Widget.dart';
 
@@ -21,11 +22,11 @@ class QuranScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              'عدد الآيات',
+              AppLocalizations.of(context)!.surahName,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             Text(
-              'اسم السورة',
+              AppLocalizations.of(context)!.numberOfVerses,
               style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],

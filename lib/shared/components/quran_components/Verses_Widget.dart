@@ -4,10 +4,10 @@ import 'package:islami_app/models/sura_details_args.dart';
 import '../../../modules/sura_details_screen/sura_datails_sreen.dart';
 
 class VersesWidget extends StatelessWidget {
-  Map names;
-  int index;
+  final Map names;
+  final int index;
 
-  VersesWidget({required this.names, required this.index});
+  const VersesWidget({super.key, required this.names, required this.index});
 
   @override
   Widget build(BuildContext context) {
@@ -23,11 +23,11 @@ class VersesWidget extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
             Text(
-              '${names['number']}',
+              '${names['name']}',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
             Text(
-              '${names['name']}',
+              '${names['number']}',
               style: Theme.of(context).textTheme.headlineLarge,
             ),
           ],
